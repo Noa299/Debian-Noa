@@ -8,6 +8,11 @@ builddir=$(pwd)
 sudo apt update
 sudo apt upgrade -y
 
+# Installing Nala using PPA
+echo "deb http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list
+wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg > /dev/null
+sudo apt update
+
 # Install nala
 sudo apt install nala -y
 sudo nala fetch
