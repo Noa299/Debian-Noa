@@ -34,6 +34,7 @@ sudo cp -v qtile.desktop /usr/share/xsessions/qtile.desktop
 sudo nala install xterm kitty thunar picom vim git neofetch rofi firefox-esr arandr zip unzip flameshot feh dunst -y
 
 # Installing some fonts
+wget https://www.1001fonts.com/download/fantasque-sans-mono.zip
 unzip fantasque-sans-mono.zip -d fantasque-sans-mono
 sudo cp -Rv fantasque-sans-mono /usr/share/fonts
 cp -Rv fantasque-sans-mono /home/$username/.local/share/fonts
