@@ -44,8 +44,13 @@ mkdir -pv /home/$username/Pictures
 cp -Rv wallpapers /home/$username/Pictures/
 
 # Sound stuff
-sudo nala install pulseaudio pavumeter pavucontrol paprefs avahi-daemon
-sudo nala install breeze-icon-theme
+sudo nala install pulseaudio pavumeter pavucontrol paprefs avahi-daemon pasystray -y
+sudo nala install breeze-icon-theme -y
 
 # Installing cursor theme
-sudo cp -Rv Sweet-dark /usr/share/icons/
+tar -jxvf Sweet-cursors.tar.bz2
+sudo cp -Rv Sweet-cursors /usr/share/icons/
+
+# Copying config files
+mkdir -p /home/$username/.config
+cp -Rv dotconfig/* /home/$username/.config/
