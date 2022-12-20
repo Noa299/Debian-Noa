@@ -6,3 +6,4 @@ feh --randomize --bg-fill /home/noa/Pictures/wallpapers/*
 #picom --config .config/picom/picom-blur.conf --experimental-backends &
 dunst &
 flameshot &
+pasystray &

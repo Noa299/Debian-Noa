@@ -50,11 +50,15 @@ keys = [
 groups = []
 
 # FOR QWERTY KEYBOARDS
-group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
+#group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
 
 # FOR AZERTY KEYBOARDS
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
-# group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
+#group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
+
+#FOR BÉPO KEYBOARDS
+# You need to know about the keysyms : https://wiki.linuxquestions.org/wiki/List_of_Keysyms_Recognised_by_Xmodmap
+group_names = ["quotedbl","guillemotleft","guillemotright","parenleft","parenright","at","plus","minus","slash","asterisk"]
 group_labels = ["α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι", "κ",]
 
 
@@ -100,10 +104,15 @@ layouts = [
     # layout.Zoomy(),
 ]
 
+colors = [["#282c34","#282c34"],
+          ["#1c1f24","#1c1f24"],
+          ["#dfdfdf","#dfdfdf"]]
+
 widget_defaults = dict(
     font="Fantasque Sans Mono",
     fontsize=18,
     padding=3,
+    background=colors[1]
 )
 extension_defaults = widget_defaults.copy()
 
