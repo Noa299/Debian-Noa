@@ -8,13 +8,11 @@ builddir=$(pwd)
 sudo apt update
 sudo apt upgrade -y
 
-# Installing Nala using PPA
-echo "deb http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list
-wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg > /dev/null
+# Installing Nala and its dependencies
+sudo wget -qO- https://deb.volian.org/volian/scar.key | gpg --dearmor | dd of=/usr/share/keyrings/volian-archive-scar.gpg
+sudo echo "deb [signed-by=/usr/share/keyrings/volian-archive-scar.gpg arch=amd64] https://deb.volian.org/volian/ scar main" > /etc/apt/sources.list.d/volian-archive-scar.list
 sudo apt update
-
-# Install nala
-sudo apt install nala -y
+sudo apt install nala-legacy -y
 sudo nala fetch
 
 # Installing qtile and its dependencies
@@ -36,7 +34,7 @@ sudo mkdir -v /usr/share/xsessions
 sudo cp -v qtile.desktop /usr/share/xsessions/qtile.desktop
 
 # Installing basic programs
-sudo nala install xterm kitty thunar picom vim git neofetch rofi firefox-esr arandr zip unzip flameshot feh dunst -y
+sudo nala install xterm kitty thunar dolphin picom vim git neofetch rofi firefox-esr arandr zip unzip flameshot feh dunst -y
 
 # Installing some fonts
 wget https://www.1001fonts.com/download/fantasque-sans-mono.zip
@@ -60,3 +58,4 @@ sudo cp -Rv Sweet-cursors /usr/share/icons/
 # Copying config files
 mkdir -p /home/$username/.config
 cp -Rv dotconfig/* /home/$username/.config/
+sudo chmod +x /home/$username/.config/qtile/autostart.sh
