@@ -56,6 +56,9 @@ tar -jxvf Sweet-cursors.tar.bz2
 sudo cp -Rv Sweet-cursors /usr/share/icons/
 
 # Copying config files
-mkdir -p /home/$username/.config
+mkdir -pv /home/$username/.config
 cp -Rv dotconfig/* /home/$username/.config/
 sudo chmod +x /home/$username/.config/qtile/autostart.sh
+mkdir -pv /home/$username/.screenlayout
+cp screenlayout/def.sh /home/$username/.screenlayout/
+sudo chmod +x /home/$username/.screenlayout/def.sh
